@@ -1,29 +1,23 @@
-/*
- * Activity 2.2.7
- *
- * A Book class for the MediaLibrary program
- */
-public class Book
+public class Movie 
 {
-  private String title;
-  private String author;
-  private int rating;
-  
-  /*** Constructor ****/
-  public Book(String t, String a)
+    private String title;
+    private double length;
+    private Integer rating;
+
+    public Movie(String t, double h)
   {
     title = t;
-    author = a;
+    length = h;
     rating = 0;
   }
-  
-   /*** Accessor methods ***/
+
+  /*** Accessor methods ***/
   public String getTitle() {
     return title;
   }
 
-  public String getAuthor() {
-    return author;
+  public double getLength() {
+    return length;
   }
   
   public int getRating() {
@@ -32,7 +26,7 @@ public class Book
   
   public String toString() 
   {
-    String info = "\"" + title + "\", written by " + author;
+    String info = "\"" + title + "\", " + length + " hours long";
     if (rating != 0) 
     { 
       info += ", rating is " + rating;
@@ -40,8 +34,8 @@ public class Book
     return info;
   }
 
-  public boolean equals(Book b){
-    if ((this.title.equals(b.title)) && (this.author.equals(b.author))){
+  public boolean equals(Movie m){
+    if ((this.title.equals(m.title)) && (this.length == m.length)){
 		  return true;
 	  } else {
 		  return false;
@@ -53,8 +47,8 @@ public class Book
     title = t;
   }
 
-  public void setAuthor(String a) {
-    author = a;
+  public void setLength(double h) {
+    length = h;
   }
 
   public void adjustRating(Integer r){
